@@ -1,32 +1,51 @@
 public class Persona {
-    private String nombre;
-    private int ci;
-    private int edad;
+    protected String nombre;
+    protected int ci;
+    protected int edad;
+    protected String cargo;
 
-    public Persona(String nombre, int ci, int edad){
+    public Persona(String nombre, int ci, int edad, String cargo) {
         this.nombre = nombre;
         this.ci = ci;
         this.edad = edad;
+        this.cargo = cargo;
     }
 
-    public int getCi(){
+    protected int getCi(){
         return this.ci;
     }
-    
-    public void setNombre(String nombre){
+
+    protected String getCargo(){
+        return this.cargo;
+    }
+
+    protected String getNombre(){
+        return this.nombre;
+    }
+
+    protected int getEdad(){
+        return this.edad;
+    }
+
+    protected void setNombre(String nombre){
         this.nombre = nombre;
     }
 
-    public void setCi(int ci){
+    protected void setCi(int ci){
         this.ci = ci;
     }
 
-    public void setEdad(int edad){
+    protected void setEdad(int edad){
         this.edad = edad;
+    }
+
+    protected void setCargo(String cargo){
+        this.cargo = cargo;
     }
 
     @Override
     public String toString(){
-        return "nombre: " + nombre + "\nci: " + ci + "\nedad: " + edad;
+        return "\nNombre: "+ this.nombre + "\nCi: " + this.ci + "\nEdad: " + this.edad + "\nCargo: " + this.cargo;
     }
+
 }
