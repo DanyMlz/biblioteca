@@ -23,8 +23,8 @@ public class Prestamo {
         String nombreLibroMaterial = scanner.nextLine();
         this.codigoPrestamo = generarId();
         String idMaterial = "";
-        this.idMaterial = buscarIdMaterial(categoria, nombreLibroMaterial);
-        ArchivoPrestamo.postPrestamo(codigoPrestamo, idMaterial, categoria, codPersona);
+        idMaterial = buscarIdMaterial(categoria, nombreLibroMaterial);
+        ArchivoPrestamo.postPrestamo(idMaterial);
     }
 
     private String buscarIdMaterial(String categoria, String nombreMaterial){
@@ -44,9 +44,20 @@ public class Prestamo {
         return idMaterial;
     }
 
+    public void materialesPrestados(){
 
-
-
+        ArrayList<String> listaPrestamos =  ArchivoPrestamo.getPrestamo();
+        for(String codPrestamo : listaPrestamos){
+            Libro libro =  ArchivoMaterial.getLibros(codPrestamo);
+            if(codPrestamo.equals(libro.getId())){
+                System.out.println(libro);
+            }
+            Revista revista = ArchivoMaterial.getRevistas(codPrestamo);
+            if(codPrestamo.equals(revista.getId())){
+                System.out.println(revista);
+            }
+        }
+    }
 
 
     @Override

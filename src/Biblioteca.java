@@ -218,25 +218,6 @@ public class Biblioteca {
                 System.out.println(estudiante);
             }
         }
-        System.out.println(listaPersonas);
+    
     }
-
-/*
-    private void prestarMateriales(){
-        System.out.println("Ingrese su Ci");
-        int ci = scanner.nextInt();
-        scanner.nextLine();
-        System.out.println("Ingrese el nombre del libro");
-        String nombreLibro = scanner.nextLine();
-        Prestamo prestamo = new Prestamo(ci, nombreLibro);
-        materialesPrestados.add(prestamo);
-        System.out.println("Libro prestado");
-
-    }
-
-    private void mostrarMaterialesPrestados(){
-        for(Prestamo prestamo : materialesPrestados){
-            System.out.println(prestamo);
-        }
-    }*/
 }

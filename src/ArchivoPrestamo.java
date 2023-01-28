@@ -7,10 +7,10 @@ import java.util.ArrayList;
 
 public class ArchivoPrestamo {
 
-    public static void postPrestamo(String codigoPrestamo,String idMaterial,String categoria,String codPersona) {
+    public static void postPrestamo(String idMaterial) {
         try {
-            BufferedWriter user = new BufferedWriter(new FileWriter(codigoPrestamo + ".txt"));
-            user.write(codigoPrestamo + "\n");
+            BufferedWriter user = new BufferedWriter(new FileWriter("listaMaterialesPrestados" + ".txt"));
+            user.write(idMaterial + "\n");
             user.close();
 
         } catch (IOException e) {
@@ -18,12 +18,12 @@ public class ArchivoPrestamo {
         }
     }
 
-    public static ArrayList<String> getPrestamo(String codigoPrestamo) {
+    public static ArrayList<String> getPrestamo() {
         String response;
 
         ArrayList<String> listaCodigoPrestamo = new ArrayList<String>();
         try {
-            Reader user = Files.newBufferedReader(Paths.get(codigoPrestamo + ".txt"), StandardCharsets.ISO_8859_1);
+            Reader user = Files.newBufferedReader(Paths.get("listaMaterialesPrestados" + ".txt"), StandardCharsets.ISO_8859_1);
             BufferedReader readLista = new BufferedReader(user);
             while((response = readLista.readLine()) != null){
                 listaCodigoPrestamo.add(response);

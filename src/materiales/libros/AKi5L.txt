@@ -1,5 +1,0 @@
-Id:AKi5L
-Titulo:lobo
-Editorial:asddsf
-Autor:sadfd
-Categoria:libros

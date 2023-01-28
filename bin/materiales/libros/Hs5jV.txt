@@ -1,0 +1,5 @@
+Id:Hs5jV
+Titulo:lobo
+Editorial:kipus
+Autor:nose
+Categoria:libros

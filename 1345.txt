@@ -1,5 +1,5 @@
 Ci:1345
-Nombre:dany
+Nombre:johan
 Edad:19
 Cargo:estudiante
 CodigoSys:123512532

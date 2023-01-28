@@ -27,6 +27,7 @@ public class Material {
         System.out.println("[2] Eliminar material ");
         System.out.println("[3] mostrar Lista de material");
         System.out.println("[4] prestar material");
+        System.out.println("[5] mostrar materiales prestamos");
         System.out.println("[0] salir");
     }
     public void iniciar(){
@@ -62,6 +63,11 @@ public class Material {
                     prestamo.prestarMaterial();
                 break;
 
+                case 5:
+                    Prestamo prestamo2 = new Prestamo();
+                    prestamo2.materialesPrestados();
+                break;
+
                 default:
             }
 
@@ -89,6 +95,7 @@ public class Material {
         }
 
         if(opcion == 2){
+            scanner.nextLine();
             System.out.println("Titulo: ");
             String titulo = scanner.nextLine();
             System.out.println("Editorial: ");
@@ -141,9 +148,9 @@ public class Material {
         for(String id : idsMateriales){
             Revista revista = ArchivoMaterial.getRevistas(id);
             Libro libro = ArchivoMaterial.getLibros(id);
-            if(libro.getCategoria().equals("libro")){
+            if(libro.getCategoria().equals("libros")){
                 System.out.println(libro);
-            }else{
+            }else if(revista.getCategoria().equals("revistas")){
                 System.out.println(revista);
             }
         }

@@ -1,0 +1,5 @@
+Ci:1234
+Nombre:juan
+Edad:32
+Cargo:docente
+CodigoDocente:3456
